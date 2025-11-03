@@ -54,16 +54,20 @@
       font-size: 1.1rem;
     }
 
-    .card {
+    .info-block {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      padding: 2rem;
+      line-height: 2;
     }
 
-    .card h2 {
+    .info-label {
       color: #ffcc66;
       font-weight: 600;
+      width: 80px;
+      display: inline-block;
     }
 
     a {
@@ -117,23 +121,20 @@
   <!-- 主內容 -->
   <main class="container my-5">
 
-    <div class="card p-4 mb-4">
+    <div class="info-block mb-4">
       <h2 class="mb-3">📅 活動資訊</h2>
-      <ul class="list-unstyled fs-5">
-        <li><strong>日期：</strong>114年11月28日（星期五）</li>
-        <li><strong>時間：</strong>18:30</li>
-        <li><strong>地點：</strong>台南市東東宴會式場－華平囍嫁館（東東宴會式場－華平館）</li>
-        <li><strong>地址：</strong>台南市安平區華平路156號</li>
-        <li><strong>📍 Google 導航：</strong>
-          <a href="https://www.google.com/maps?q=台南市安平區華平路156號" target="_blank">點我開啟地圖</a>
-        </li>
-      </ul>
+      <p><span class="info-label">日期：</span>114年11月28日（星期五）</p>
+      <p><span class="info-label">時間：</span>18:30</p>
+      <p><span class="info-label">地點：</span>台南市東東宴會式場－華平囍嫁館</p>
+      <p><span class="info-label">地址：</span>台南市安平區華平路156號</p>
+      <p><span class="info-label">導航：</span><a href="https://www.google.com/maps?q=台南市安平區華平路156號" target="_blank">📍 點我開啟 Google 地圖</a></p>
     </div>
 
-    <div class="card p-4">
+    <div class="info-block">
       <h2 class="mb-3">📞 聯絡資訊</h2>
-      <p class="fs-5">教學研究組　分機：32985～6</p>
+      <p class="fs-5">教學研究組　分機：32985、32987</p>
     </div>
+
   </main>
 
   <!-- 頁尾 -->
