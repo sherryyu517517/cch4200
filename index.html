@@ -3,161 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🥂 佳里奇美醫院 - 臨床教師歲末餐敘</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+    <title>佳里奇美醫院 114 年主治醫師暨臨床教師餐敘</title>
     <style>
-        /* 新的溫馨色系：背景使用米黃色/淺暖色 */
+        /* 基礎樣式設定：沿用您的內斂棕色系風格 */
         body {
-            background-color: #fffaf0; /* BlanchedAlmond - 溫暖的米黃色 */
+            font-family: 'Times New Roman', serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
             color: #333;
-        }
-        /* 導航列與標題區塊 */
-        .navbar {
-            background-color: #f7a35c; /* 溫暖的橘色/鮭魚色 */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .navbar-brand, .nav-link {
-            color: white !important;
-            font-weight: 500;
-        }
-        /* 主要活動資訊區塊 */
-        .info-box {
-            background-color: #ffffff;
-            border-left: 5px solid #00a896; /* 清新的主色調 */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-        }
-        /* 頁面標題調整 */
-        .header-title {
-            color: #e55934; /* 活潑的紅色 */
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        /* 導航卡片樣式 */
-        .nav-card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            cursor: pointer;
-            border: none;
             text-align: center;
         }
-        .nav-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        .header {
+            background-color: #5D4037; /* 深咖啡色 */
+            color: white;
+            padding: 50px 20px 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+        .header p {
+            font-size: 1.2em;
+            margin-top: 15px;
+            font-weight: 300;
+        }
+        /* 主辦/協辦單位資訊樣式 */
+        .organizers {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .organizers span {
+            display: inline-block;
+            margin: 0 15px;
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .section {
+            background-color: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            text-align: left;
+            border-top: 5px solid #795548; /* 主題色：暖棕 */
+        }
+        h2 {
+            color: #795548; 
+            border-bottom: 2px solid #efebe9;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        /* 流程細節樣式 */
+        .schedule-item, .contact-item {
+            margin-bottom: 20px;
+            padding-left: 25px;
+            border-left: 4px solid #bcaaa4;
+        }
+        .schedule-item strong {
+            color: #5D4037; 
+            display: inline-block;
+            width: 130px; /* 調整寬度以對齊 */
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .schedule-item p {
+            display: inline;
+            margin-left: 10px;
+        }
+        /* 按鈕樣式：更內斂專業 */
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .action-button {
+            display: inline-block;
+            padding: 18px 40px;
+            margin: 15px 5px; /* 縮小按鈕間距 */
+            font-size: 1.2em;
+            font-weight: 500;
+            text-decoration: none;
+            color: white;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, transform 0.2s;
+            box-shadow: 0 4px #4e342e;
+        }
+        .checkin-button {
+            background-color: #6d4c41; /* 報到 (深棕) */
+        }
+        .report-button {
+            background-color: #00796B; /* 報表 (醫院綠) */
+        }
+        .survey-button {
+            background-color: #1a237e; /* 問卷 (深藍) */
+        }
+        .map-button {
+            background-color: #D32F2F; /* 地圖 (紅色) */
+            box-shadow: 0 4px #9a0007;
+        }
+        .action-button:hover {
+            background-color: #4e342e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px #4e342e;
+        }
+        .map-button:hover {
+             background-color: #B71C1C;
+             box-shadow: 0 6px #9a0007;
+        }
+        .action-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px #4e342e;
+        }
+        /* 特別強調：日期時間地點 */
+        .details {
+            font-size: 1.1em;
+            line-height: 1.8;
+            padding: 15px;
+            background-color: #fff8e1; /* 淺黃色強調區 */
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        /* 表格樣式 for 芳名錄 */
+        .honors-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .honors-table th, .honors-table td {
+            border: 1px solid #efebe9;
+            padding: 10px;
+            text-align: center;
+        }
+        .honors-table th {
+            background-color: #ede7f6; /* 淺紫/灰，增加區分度 */
+            color: #5D4037;
+            font-weight: bold;
+        }
+        .category-title {
+            color: #D32F2F;
+            font-size: 1.4em;
+            margin-top: 25px;
+            border-bottom: 1px dashed #D32F2F;
+            padding-bottom: 5px;
         }
     </style>
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">🥂 佳里奇美醫院餐敘</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">🏡 首頁</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="registration.html">📝 報名與報到</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="agenda.html">⏰ 活動流程</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="honors.html">🏆 教師芳名錄</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="survey.html">📊 滿意度調查</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main class="container py-5">
+    <div class="header">
+        <h1>佳里奇美醫院 114 年主治醫師暨臨床教師餐敘</h1>
+        <p>CHIMEI HOSPITAL JIALI BRANCH: 2025 Annual Physician & Clinical Educator Gathering</p>
         
-        <header class="text-center mb-5">
-            <h1 class="header-title display-4">佳里奇美醫院 114年度 主治醫師暨臨床教師餐敘</h1>
-            <p class="lead text-muted">感謝您的辛勞付出，誠摯邀請您共享溫馨的感恩時刻！</p>
-        </header>
+        <div class="organizers">
+            <span>主辦單位：佳里奇美醫院</span>
+            <span>協辦單位：台南市醫師公會</span>
+        </div>
+    </div>
 
-        <section id="info" class="mb-5 info-box">
-            <h2 class="mb-3 text-secondary">🎉 活動資訊 (2025/11/28)</h2>
+    <div class="container">
+        
+        <div class="section details">
+            <strong>📅 日期與時間：</strong> 114年11月28日 (五) 18:30 <br>
+            <strong>📍 地點：</strong> 台南市東東宴會式場-華平囍嫁館 (安平區華平路156號) <br>
             
-            <div class="row g-3">
-                <div class="col-md-6"><p class="mb-1"><strong>📅 日期：</strong> 114年11月28日 (五)</p></div>
-                <div class="col-md-6"><p class="mb-1"><strong>⏰ 時間：</strong> 18:30 (18:00 開放入場)</p></div>
-                <div class="col-md-6"><p class="mb-1"><strong>🏥 主辦單位：</strong> 佳里奇美醫院</p></div>
-                <div class="col-md-6"><p class="mb-1"><strong>🤝 協辦單位：</strong> 台南市醫師公會</p></div>
-                
-                <hr class="mt-3">
-                
-                <div class="col-12 text-center">
-                    <h4>📍 台南市東東宴會式場-華平囍嫁館</h4>
-                    <p class="text-muted">地址：台南市安平區華平路156號</p>
-                    <a href="https://maps.app.goo.gl/YourGoogleMapsLinkHere" target="_blank" class="btn btn-primary btn-lg mt-2 shadow">
-                        🗺️ 點擊 Google 導航
-                    </a>
-                </div>
+            <div class="button-group">
+                 <a href="【請替換為東東華平囍嫁館的 Google 地圖導航連結】" target="_blank" class="action-button map-button">
+                    📍 Google 導航
+                </a>
             </div>
-        </section>
-
-        <hr class="my-5">
-
-        <section id="quick-nav">
-            <h2 class="text-center mb-4 text-secondary">快速導覽</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                
-                <div class="col">
-                    <a href="registration.html" class="text-decoration-none">
-                        <div class="card nav-card h-100 bg-success text-white">
-                            <div class="card-body">
-                                <h3>📝 報名與報到</h3>
-                                <p class="card-text">報名連結、報到流程與即時出席狀況查看。</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="col">
-                    <a href="agenda.html" class="text-decoration-none">
-                        <div class="card nav-card h-100 bg-info text-white">
-                            <div class="card-body">
-                                <h3>⏰ 活動流程</h3>
-                                <p class="card-text">餐敘當日詳細時間表與議程。</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="honors.html" class="text-decoration-none">
-                        <div class="card nav-card h-100 bg-warning text-dark">
-                            <div class="card-body">
-                                <h3>🏆 教師芳名錄</h3>
-                                <p class="card-text">優良及傑出臨床教師表揚名單。</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            
+            <div style="margin-top: 20px;">
+                <strong>☎️ 聯繫窗口：</strong> 教學研究組 (分機 32985 ~ 32986)
             </div>
-        </section>
-        
-    </main>
-
-    <footer class="text-center py-4 mt-5" style="background-color: #f7a35c; color: white;">
-        <div class="container">
-            <p class="mb-1">📞 聯繫窗口：教學研究組 (分機 32985 ~ 32986)</p>
-            <p class="mb-0">© 佳里奇美醫院 教學研究組 誠摯邀請 | 114年度餐敘</p>
         </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <div class="section button-group">
+            <h2>系統快速通道 (System Access)</h2>
+            
+            <a href="【請替換為您的報名 Google Form 連結】" target="_blank" class="action-button checkin-button" style="background-color: #388e3c; box-shadow: 0 4px #1b5e20;">
+                ✍️ 報名參加 (院內外嘉賓)
+            </a>
+            
+            <a href="【請替換為您的工作人員報到 Google Form 連結】" target="_blank" class="action-button checkin-button">
+                ✅ 現場報到 (工作人員專用)
+            </a>
+             
+            <a href="【請替換為您的 Google Sheets 即時報表發佈連結】" target="_blank" class="action-button report-button">
+                📈 即時出席報表
+            </a>
+            
+            <a href="【請替換為您的滿意度問卷 Google Form 連結】" target="_blank" class="action-button survey-button">
+                ⭐ 滿意度回饋
+            </a>
+            
+            <p style="text-align: center; margin-top: 20px; color: #757575;">報到系統可實現報名名單與實際出席狀態自動比對。</p>
+        </div>
+
+        <div class="section">
+            <h2>📜 當日流程介紹 (Program Agenda)</h2>
+            <div class="schedule-item">
+                <strong>18:00 - 18:30</strong>
+                <p>蒞臨與交流時間 (Welcome & Networking Reception)</p>
+            </div>
+            <div class="schedule-item">
+                <strong>18:30 - 18:40</strong>
+                <p>餐敘序曲：院長/院級主管致歡迎詞</p>
+            </div>
+            <div class="schedule-item">
+                <strong>18:40 - 20:30</strong>
+                <p>享用佳餚、感謝儀式與自由交流時間</p>
+            </div>
+            <div class="schedule-item">
+                <strong>20:30</strong>
+                <p>珍重再見 (Closing and Farewell)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏆 優良及傑出教師芳名錄</h2>
+            <p style="margin-bottom: 15px;">佳里奇美醫院謹向所有為臨床教育付出辛勞的教師們致上最崇高的敬意與感謝。</p>
+            
+            <p class="category-title">🥇 傑出臨床教師 (Outstanding Clinical Educators)</p>
+            <table class="honors-table">
+                <thead>
+                    <tr><th>姓名</th><th>職稱</th><th>科別/單位</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>王OO 醫師</td><td>主治醫師</td><td>內科部</td></tr>
+                    <tr><td>陳XX 醫師</td><td>主治醫師</td><td>外科部</td></tr>
+                    <tr><td>林YY 醫師</td><td>臨床教師</td><td>婦產部</td></tr>
+                    </tbody>
+            </table>
+            
+            <p class="category-title">🥈 優良臨床教師 (Excellent Clinical Educators)</p>
+            <table class="honors-table">
+                <thead>
+                    <tr><th>姓名</th><th>職稱</th><th>科別/單位</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>張 A 醫師</td><td>主治醫師</td><td>兒科部</td></tr>
+                    <tr><td>黃 B 醫師</td><td>主治醫師</td><td>急診醫學部</td></tr>
+                    <tr><td>趙 C 醫師</td><td>臨床教師</td><td>麻醉科</td></tr>
+                    </tbody>
+            </table>
+        </div>
+
+    </div>
 </body>
 </html>
-
